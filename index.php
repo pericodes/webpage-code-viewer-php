@@ -12,6 +12,9 @@
         return $html ? $html : "";
     }
 
+    header('Content-type: application/json');
+    header('Access-Control-Allow-Origin: *');
+
     if($_SERVER['REQUEST_METHOD'] === 'POST'){
         $param = json_decode(file_get_contents('php://input'), true);
         if ($param && isset($param["url"])) {
