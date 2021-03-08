@@ -14,6 +14,7 @@
 
     header('Content-type: application/json');
     header('Access-Control-Allow-Origin: *');
+    header('Access-Control-Expose-Headers: Content-Type');
 
     if($_SERVER['REQUEST_METHOD'] === 'POST'){
         $param = json_decode(file_get_contents('php://input'), true);
